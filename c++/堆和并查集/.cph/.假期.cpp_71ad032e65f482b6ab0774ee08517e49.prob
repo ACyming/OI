@@ -1,1 +1,0 @@
-{"name":"Local: 假期","url":"/home/user/vscode/c++code/c++/堆和并查集/假期.cpp","tests":[{"id":1714188006217,"input":"5 2 4\n-9 -4 -3 8 -6","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/user/vscode/c++code/c++/堆和并查集/假期.cpp","group":"local","local":true}
