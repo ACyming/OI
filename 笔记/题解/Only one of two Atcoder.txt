@@ -1,0 +1,9 @@
+ Atcoder 2024/2/17
+D - Only one of two
+
+X:代表答案
+G=N*M/gcd
+X/N+X/M-2*X/G<=K
+二分答案（范围LONG_LONG_MAX）
+
+

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>总结.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="noip2010tj%E6%9C%BA%E5%99%A8%E7%BF%BB%E8%AF%91">【NOIP2010tj】机器翻译</h2>
+<p>纯水题，<strong>模拟队列</strong>就过了。</p>
+<h2 id="%E4%B9%8C%E9%BE%9F%E6%A3%8B">乌龟棋</h2>
+<p>比赛时动态规划没有打出来，暴搜拿了 $20$ 分，实际上十分简单：</p>
+<p>观察题目可得：每种类型的卡片上只有$1$ 、$2$ 、$3$ 、$4$ 四个数字之一</p>
+<p>于是可以得出状态：
+$$
+f_{i_1,i_2,i_3,i_4}表示数值为1的的卡牌用了i_1次，数值2的卡牌用了i_2次，以此类推\dots
+$$
+那么我们很轻松就可以得出转移方程（$a$表示输入的第二行）：
+$$
+f_{i_1,i_2,i_3,i_4}=\max(f_{i_1,i_2,i_3,i_4},f_{i_1-1,i_2,i_3,i_4}+a_{(1 + i_1 + i_2 \times 2 + i_3  \times 3 + i_4  \times 4)})<br>
+$$
+剩下的可以以此类推：</p>
+<pre class="hljs"><code><div> f[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>][<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = a[<span class="hljs-number">1</span>];<span class="hljs-comment">//初值</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> a1 = <span class="hljs-number">0</span>; a1 &lt;= _[<span class="hljs-number">1</span>]; a1++)
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> a2 = <span class="hljs-number">0</span>; a2 &lt;= _[<span class="hljs-number">2</span>]; a2++)
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> a3 = <span class="hljs-number">0</span>; a3 &lt;= _[<span class="hljs-number">3</span>]; a3++)
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> a4 = <span class="hljs-number">0</span>; a4 &lt;= _[<span class="hljs-number">4</span>]; a4++) {
+                    <span class="hljs-keyword">if</span> (a1 &gt; <span class="hljs-number">0</span>) f[a1][a2][a3][a4] = max(f[a1 - <span class="hljs-number">1</span>][a2][a3][a4] + a[<span class="hljs-number">1</span> + a1 + a2 * <span class="hljs-number">2</span> + a3 * <span class="hljs-number">3</span> + a4 * <span class="hljs-number">4</span>], f[a1][a2][a3][a4]);
+                    <span class="hljs-keyword">if</span> (a2 &gt; <span class="hljs-number">0</span>) f[a1][a2][a3][a4] = max(f[a1][a2 - <span class="hljs-number">1</span>][a3][a4] + a[<span class="hljs-number">1</span> + a1 + a2 * <span class="hljs-number">2</span> + a3 * <span class="hljs-number">3</span> + a4 * <span class="hljs-number">4</span>], f[a1][a2][a3][a4]);
+                    <span class="hljs-keyword">if</span> (a3 &gt; <span class="hljs-number">0</span>) f[a1][a2][a3][a4] = max(f[a1][a2][a3 - <span class="hljs-number">1</span>][a4] + a[<span class="hljs-number">1</span> + a1 + a2 * <span class="hljs-number">2</span> + a3 * <span class="hljs-number">3</span> + a4 * <span class="hljs-number">4</span>], f[a1][a2][a3][a4]);
+                    <span class="hljs-keyword">if</span> (a4 &gt; <span class="hljs-number">0</span>) f[a1][a2][a3][a4] = max(f[a1][a2][a3][a4 - <span class="hljs-number">1</span>] + a[<span class="hljs-number">1</span> + a1 + a2 * <span class="hljs-number">2</span> + a3 * <span class="hljs-number">3</span> + a4 * <span class="hljs-number">4</span>], f[a1][a2][a3][a4]);
+                }
+</div></code></pre>
+<h2 id="%E5%BC%95%E6%B0%B4%E5%85%A5%E5%9F%8E">引水入城</h2>
+<p>这是一道搜索题，实现不难，但是比较难想。</p>
+<h3 id="%E7%AC%AC%E4%B8%80%E6%AD%A5">第一步</h3>
+<p>我们先对第一行的每一个点进行 DFS ,把走过的点进行标记，看最后一行是否全都被标记，如果没有，输出 $0$ 。</p>
+<h3 id="%E7%AC%AC%E4%BA%8C%E6%AD%A5">第二步</h3>
+<p>接下来我们要在 DFS 中进行 $r$ 数组和 $l$ 数组的维护：</p>
+<p>$r_{x,y}$表示的是以坐标为 $x,y$ 的点出发，可以到达的最右侧的点<br>
+$l_{x,y}$表示的是以坐标为 $x,y$ 的点出发，可以到达的最坐侧的点</p>
+<p><img src="file:///home/user/Desktop/编程/总结/2024.7.29/P1.png" alt="alt text"><br>
+例如在这个图中: $l_{x,y}=2$ 就是蓝色那个点，$r_{x,y}=4$ 就是红色那个点。
+这个 DFS 过程中求即可</p>
+<h3 id="%E8%B7%B3%E6%95%B0">跳数</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> k = <span class="hljs-number">1</span>;<span class="hljs-comment">//当前跳到的点</span>
+<span class="hljs-keyword">while</span> (k &lt;= m) {<span class="hljs-comment">//保证在 m 内</span>
+    <span class="hljs-keyword">int</span> cmp = <span class="hljs-number">0</span>;<span class="hljs-comment">//临时变量</span>
+    ans++;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; i++)
+        <span class="hljs-keyword">if</span>(l[<span class="hljs-number">1</span>][i]&lt;=k)<span class="hljs-comment">//在l的右边，表示在l和r的区间内</span>
+            cmp = max(cmp, r[<span class="hljs-number">1</span>][i]);<span class="hljs-comment">//找到最大的右端点</span>
+    k = cmp + <span class="hljs-number">1</span>;<span class="hljs-comment">//跳</span>
+}
+</div></code></pre>
+<h2 id="%E5%85%B3%E6%8A%BC%E7%BD%AA%E7%8A%AF">关押罪犯</h2>
+<p>这是一道<strong>并查集</strong>，我们将人分为两类，一类是互相是仇人，一类是互相是 “友人” ，我们通过并查集进行维护：</p>
+<p>先将输入的数组的权值进行从大到小的排序，然后开始维护：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; i++) {
+    <span class="hljs-keyword">int</span> fx = find(g[i].a);
+    <span class="hljs-keyword">int</span> fy = find(g[i].b);
+    <span class="hljs-keyword">if</span> (fx == fy) {<span class="hljs-comment">//如果两人的仇人是同一个人，俗话说：敌人的敌人是朋友，我们便将权值输出</span>
+        <span class="hljs-built_in">cout</span> &lt;&lt; g[i].c;
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    }
+    <span class="hljs-keyword">if</span> (fx != fy) {
+        f[fx] = find(g[i].b + n);<span class="hljs-comment">//将他们划分为仇人，n就表示仇人的那一类</span>
+        f[fy] = find(g[i].a + n);
+    }
+}
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-number">0</span>;<span class="hljs-comment">//处理没有冲突的情况</span>
+</div></code></pre>
+
+</body>
+</html>
