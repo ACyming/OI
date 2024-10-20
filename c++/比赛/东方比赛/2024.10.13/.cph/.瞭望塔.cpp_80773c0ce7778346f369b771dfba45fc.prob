@@ -1,0 +1,1 @@
+{"name":"Local: 瞭望塔","url":"e:\\OI\\c++\\比赛\\东方比赛\\2024.10.13\\瞭望塔.cpp","tests":[{"id":1728820180967,"input":"LLLRRR\nxxoxxo","output":"DA"},{"id":1728820184441,"input":"LLRRLLLRRR\noxxoxxoxox","output":"BADB"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\OI\\c++\\比赛\\东方比赛\\2024.10.13\\瞭望塔.cpp","group":"local","local":true}

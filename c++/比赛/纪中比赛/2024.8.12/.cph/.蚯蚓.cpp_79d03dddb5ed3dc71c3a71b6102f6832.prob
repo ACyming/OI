@@ -1,0 +1,1 @@
+{"name":"Local: 蚯蚓","url":"/home/user/Desktop/编程/c++/比赛/纪中比赛/2024.8.12/蚯蚓.cpp","tests":[{"id":1723550542288,"input":"3 7 1 1 3 1\n3 3 2","output":"3 4 4 4 5 5 6\n6 6 6 5 5 4 4 3 2 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/user/Desktop/编程/c++/比赛/纪中比赛/2024.8.12/蚯蚓.cpp","group":"local","local":true}
