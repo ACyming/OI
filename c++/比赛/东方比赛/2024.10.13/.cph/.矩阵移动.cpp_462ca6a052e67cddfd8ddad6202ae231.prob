@@ -1,0 +1,1 @@
+{"name":"Local: 矩阵移动","url":"/workspaces/OI/c++/比赛/东方比赛/2024.10.13/矩阵移动.cpp","tests":[{"id":1729773785733,"input":"2\n3 3 1\n000\n111\n01?\n3 3 1\n000\n?0?\n01?\n","output":"4\n2"},{"id":1729773800039,"input":"","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/workspaces/OI/c++/比赛/东方比赛/2024.10.13/矩阵移动.cpp","group":"local","local":true}
